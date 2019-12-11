@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+}
+.nav-bar{
+    background-color: lightgrey;
+    line-height: 50px;
+}
+.nav{
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-item{
+    list-style-type: none;
+    
+}
+h1{
+    margin: 0px;
+}
+h2{
+    height: 30px;
+    margin: 0px;
+}
+.hero{
+    height: 500px;
+    text-align: center;
+    padding-top: 250px;
+}
+.about-me{
+    height: 300px;
+    background-color: lightgrey;
+    height: 500px;
+    text-align: center;
+    padding-top: 250px;
+}
+.projects{
+    height: 500px;
+    text-align: center;
+    padding-top: 200px;
+    
+}
+.art-cont{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px; 
+}
+.articles{
+    border: 1px solid gray;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+}
+.contact{
+    height: 300px;
+    background-color: lightgrey;
+    text-align: center;
+    padding-top: 115px;
+}
+
