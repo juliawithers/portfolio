@@ -5,31 +5,42 @@
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Julia Fehr - Portfolio Site</title>
     <link href="style.css" rel="stylesheet" type="text/css" /> 
+    <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="contactbody">
     <header class = "nav-bar">
         <ul class = "nav">
-            <li class = "nav-item">Contact</li>
-            <li class = "nav-item">Projects</li>
-            <li class = "nav-item">About Me</li>
+            <li class = "nav-item"><a href = "contact.html">Contact</a></li>
+            <li class = "nav-item"><a href = "projects.html">Projects</a></li>
+            <li class = "nav-item"><a href = "about.html">About Me</a></li>
+            <li class = "nav-item"><a href = "index.html">Home</a></li>
         </ul>
     </header>
-    <main class = "main">
-        <section class = "contact">
-            <form>
-                <fieldset>
+    <main class = "main" class="contactmain">
+        <section class = "contact-page">
+            <h2>Contact Julia Fehr via Email</h2>
+            <p>Please feel free to contact me with any questions or concerns!</p>
+            <form id="contactform" method="post">
+                <fieldset class="contact-field">
+                    <legend for="name">Name</legend>
+                    <input type="text"  name="name" id="name" class="name" placeholder="Jane Doe"> <br>
+                    <legend for="subject">Subject</legend>
+                    <input type="text"  name="subject" id="subject" class="subject" placeholder="Subject of message here."><br>
+                    <legend for="message">Message</legend>
+                    <textarea type="text"  name="message" id="message" class="message" placeholder="Content of message here." ></textarea><br>
                     <!-- submit an email -->
+                    <button class="submit">Submit Message</button>
                 </fieldset>
             </form>
         </section>
-        <footer class = "contact">
-            <h3>Contact</h3>
-            <p>Name</p>
-            <p>Email</p>
-            <p>Phone</p>
-        </footer>
-
+        <div class="imgcontainer">
+            <p class="picturedescription">A picture of the stain glass windows inside St. Chapelle, Paris</p>
+            <img src="stain.JPG" alt="Beautiful stain glass of St. Chapelle, Paris" class="img">
+        </div>
     </main>
+    <footer class = "contact">
+            <h3 class="contactpagelink"><u><a href="contact.html"> Contact Julia Fehr</a></u></h3>
+    </footer>
 </body>
 
 </html>

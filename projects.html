@@ -1,25 +1,33 @@
 <!DOCTYPE html> 
 <html lang = "en">
 <head>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
+    <meta charset="utf-8">
     <title>Julia Fehr - Portfolio Site</title>
     <link href="style.css" rel="stylesheet" type="text/css" /> 
+    <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="projectsbody">
     <header class = "nav-bar">
         <ul class = "nav">
-            <li class = "nav-item">Contact</li>
-            <li class = "nav-item">Projects</li>
-            <li class = "nav-item">About Me</li>
+            <li class = "nav-item"><a href = "contact.html">Contact</a></li>
+            <li class = "nav-item"><a href = "projects.html">Projects</a></li>
+            <li class = "nav-item"><a href = "about.html">About Me</a></li>
+            <li class = "nav-item"><a href = "index.html">Home</a></li>
         </ul>
     </header>
-    <main class = "main">
+    <main class = "main" class="projectsmain">
         <section class = "projects">
             <h2>Projects</h2>
             <div class = "art-cont">
             <article class = "articles">
-                <p>Project 1</p> 
+                <p> <strong> Game of Thrones Quiz -</strong> </p>
+                <p>A simple quiz on the subject of Game of Thrones, utilizing HTML, CSS, and Javascript.<br>
+                <p class="buttonhome">
+                    <button class="button repo" ><a class="alink" href="https://github.com/juliawithers/quiz-app">Link to Repo</a></button>
+                    <button class="button live"><a class="alink" href="https://juliawithers.github.io/quiz-app/ ">Link to Live</a></button></p>
+                <img src="GOT_Thumb_Original.PNG" alt="Game of Thrones Quiz App Thumbnail" class = "thumbnail">
+                </p>
             </article>
             <article class = "articles">
                 <p>Project 2</p>
@@ -27,16 +35,21 @@
             <article class = "articles">
                 <p>Project 3</p>
             </article>
+            <article class = "articles">
+                <p>Project 4</p>
+            </article>
+            <article class = "articles">
+                <p>Project 5</p>
+            </article>
+            <article class = "articles">
+                <p>Project 6</p>
+            </article>
         </div>
         </section>
-        <footer class = "contact">
-            <h3>Contact</h3>
-            <p>Name</p>
-            <p>Email</p>
-            <p>Phone</p>
-        </footer>
-
     </main>
+    <footer class = "contact">
+            <h3><u><a href="contact.html"> Contact Julia Fehr</a></u></h3>
+    </footer>
 </body>
 
 </html>

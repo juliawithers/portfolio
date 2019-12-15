@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Julia Fehr - Portfolio Site</title>
     <link href="style.css" rel="stylesheet" type="text/css" /> 
+    <link href="https://fonts.googleapis.com/css?family=Karla|Rubik&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="aboutbody">
     <header class = "nav-bar">
         <ul class = "nav">
-            <li class = "nav-item">Contact</li>
-            <li class = "nav-item">Projects</li>
-            <li class = "nav-item">About Me</li>
+            <li class = "nav-item"><a href = "contact.html">Contact</a></li>
+            <li class = "nav-item"><a href = "projects.html">Projects</a></li>
+            <li class = "nav-item"><a href = "about.html">About Me</a></li>
+            <li class = "nav-item"><a href = "index.html">Home</a></li>
         </ul>
     </header>
-    <main class = "main">
-        <section class = "about-me">
+    <main class = "main" class="aboutmain">           
+            <section class = "about-me">
             <h2>About Me</h2>
-            <p>Some Text About Me</p>
+            <p>I was born and raised in Atlanta. I have recently graduated from the Front End Web Development Career Path bootcamp at Thinkful. I have a strong technical background having graduated from Georgia Tech with a degree in Mechanical Engineering. I have seen firsthand the importance of user friendly interfaces. Currently I am focusing on UX/UI.</p><br>
+            <p>I enjoy reading in my spare time and sketching on occasion. I have a deep love for sci-fi and the endless technological possibilities my favorite writers conjure up. I also enjoy a good RPG or video game when time permits. That being said, I’m partial to spending time outdoors and find it necessary to clear my head at times.</p>
         </section>
-        <footer class = "contact">
-            <h3>Contact</h3>
-            <p>Name</p>
-            <p>Email</p>
-            <p>Phone</p>
-        </footer>
-
+        <div class="imgcontainer">
+            <p class="picturedescription">A picture of the Atlanta Skyline from the top of the Clermont Lounge</p>
+            <img src="skyline.JPG" alt="The Atlanta Skyline" class="img">
+        </div>
     </main>
+    <footer class = "contact">
+            <h3><u><a href="contact.html"> Contact Julia Fehr</a></u></h3>
+    </footer>
 </body>
 
 </html>
