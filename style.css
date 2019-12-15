@@ -1,12 +1,30 @@
 *{
     box-sizing: border-box;
 }
+/* Body and Main properties */
 body{
-    margin: 0px;
+    margin:0;
 }
+body>.main{
+    padding: 50px 0px 0;
+    display:block;
+    min-height: 95vh;
+}
+/* Universal Section settings */
+section{
+    display: static;
+    height: 60%;
+    text-align: left;
+    padding: 100px 50px 50px 50px;
+}
+/* Navigation */
 .nav-bar{
-    background-color: lightgrey;
+    width: 100%;
+    background-color: black;
     line-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .nav{
     padding: 0;
@@ -16,41 +34,200 @@ body{
 }
 .nav-item{
     list-style-type: none;
-    
 }
-h1,h3{
+.nav-item > a{
+    text-decoration: none;
+    font-size: 120%;
+}
+.nav-item > a:hover{
+    font-weight: bold;
+}
+/* Text for h1,h2,h3,p,a,legend, and inputs */
+h1,h2,h3{
     margin: 0px;
+    font-family: 'Karla', sans-serif;
 }
-h2{
-    height: 30px;
-    margin: 0px;
+p,a,legend,input,textarea,button{
+    font-family: 'Rubik', sans-serif; 
+    font-size: 16px;
 }
-section{
-    height: 500px;
+p{
+    line-height: 25px;
+}
+a{
+    color: white;   
+    cursor: pointer; 
+}
+/*all images*/
+main>.imgcontainer{
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
     text-align: center;
-    padding-top: 200px;
+    border-radius: 5px;
+} 
+.imgcontainer>.picturedescription{
+    text-align: center;
 }
-.about-me{
-    background-color: lightgrey;
-}
+
+/* Articles in the Project Section */
 .art-cont{
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
     padding-top: 15px; 
 }
 .articles{
-    border: 1px solid gray;
-    display: inline-block;
-    height: 200px;
-    width: 200px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px rgb(231, 91, 91);
+    height: 250px;
+    width: 250px;
+    min-width: 250px;
+    margin-bottom: 10px;
 }
-.contact{
+.button{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    background: black;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.button>.alink{
+   text-decoration: none; 
+}
+.buttonhome>button.repo{  
+    display: block;
+    float: left;
+}
+.buttonhome>button.live{
+    display: block;
+    float: right;
+}
+.articles:hover{
+    box-shadow: 7px 7px rgb(231, 91, 91);
+}
+.articles > p{
+    line-height: 21px;
+    margin: 7px;
+}
+.articles >.thumbnail{
+    width:100px;
     height: 100px;
-    background-color: lightgrey;
-    text-align: center;
-    padding-top: 30px;
+    border: 1px solid black;
+    border-radius: 5px;;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.contact>p{
-    display: inline-block;
-    width: 70px;
+/* Footer settings */
+.contact{
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+    text-align: center;
+}
+footer.contact > a:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+/* get rid of fieldset properties and edit the input box sizes*/
+fieldset{
+    display: block;
+    text-decoration: none;
+    border: none;
+}
+.contact-field>legend{
+    padding-top: 10px;
+}
+.contact-field>.name,.subject{
+    width: 300px;
+    height: 30px;
+}
+.contact-field>.message{
+    width:100%;
+    height:150px;
+    text-align: top;
+}
+input,textarea{
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border-style: solid;
+}
+textarea{
+    border: 2px solid black;
+}
+.contact-field>button{
+    text-align: center;
+    background-color: rgb(132, 219, 170);
+    border-radius: 5px;
+    font-size: 120%;
+    cursor: pointer;
+}
+.contact-field>button:hover{
+    font-weight: bold;
+}
+@media screen and (min-width: 470px){
+    /* change article container size */
+    .art-cont{
+        display: flex;
+        flex-grow:1;
+        flex-shrink: 1;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding-top: 15px; 
+    } 
+}
+@media screen and (min-width: 750px){
+    /* Universal Section settings */
+    section{
+        text-align: left;
+        margin: 125px 0px 0px 0px;
+        padding: 0px 50px 50px 50px;
+        max-width: 1000px;
+        
+    }
+    .art-cont{  
+        padding: 10px 10px 10px 10px; 
+        border-radius: 7px;
+    }
+    /* need to adjust all images*/
+   .img{
+       max-width: 750px;
+   }
+   
+}
+@media screen and (min-width: 1000px){
+    section{
+       margin-left: auto;
+       margin-right: auto;
+    }
+}
+@media screen and (min-width: 1150px){
+    .articles{
+        width: 300px;
+        height: 300px;
+        margin: 15px;
+    }
+    /* adjust the thumbnail image size */
+    .articles >.thumbnail{
+        width:150px;
+        height: 150px;
+    }
+    .art-cont{
+        display: flex;
+        flex-grow:1;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        padding-top: 15px;  
+    }
+
 }
