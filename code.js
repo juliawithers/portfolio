@@ -1,8 +1,7 @@
 // Load each page:
 function loadPage(){
     // if contact/about/project/home load those pages
-    // let navItem = document.getElementsByClassName()
-
+    // load contact page
     $('#contact').on("click",function(){
         $('.mainload').html(
     `<div class = "main" class="contactmain">
@@ -34,7 +33,8 @@ function loadPage(){
             <p class="picturedescription">A picture of the stain glass windows inside St. Chapelle, Paris</p>
         </div>`)}
     );
-
+    
+    // load projects page
     $('#projects').on("click",function(){
         $('.mainload').html(
     `<div class = "main" class="projectsmain">
@@ -70,6 +70,7 @@ function loadPage(){
         </div>`)
     });
 
+    // load about me page
     $('#about').on("click",function(){
         $('.mainload').html(
     `<div class = "main" class="aboutmain">         
@@ -85,6 +86,7 @@ function loadPage(){
     </div> `)
     });
 
+    // load home page
     $('#index').on("click",function(){
         $('.mainload').html(
         `<div class = "main" class="heromain">    
@@ -99,6 +101,8 @@ function loadPage(){
         </div>
         </div> `)
     });
+
+    // load contact page when link at bottom is clicked
     $('.contactfooter').on("click",function(){
         $('.mainload').html(
     `<div class = "main" class="contactmain">
