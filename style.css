@@ -20,11 +20,12 @@ section{
 /* Navigation */
 .nav-bar{
     width: 100%;
-    background-color: black;
+    background-color: white;
     line-height: 50px;
     position: fixed;
     top: 0;
     left: 0;
+    border-bottom: 2px solid #5085a5;
 }
 .nav{
     padding: 0;
@@ -35,7 +36,7 @@ section{
 .nav-item{
     list-style-type: none;
     font-size: 120%;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
@@ -45,6 +46,9 @@ h1,h2,h3{
     margin: 0px;
     font-family: 'Karla', sans-serif;
 }
+h1{
+    margin-bottom: 25px;
+}
 p,a,legend,input,textarea,button,li{
     font-family: 'Rubik', sans-serif; 
     font-size: 16px;
@@ -53,8 +57,9 @@ p{
     line-height: 25px;
 }
 a{
-    color: white;   
+    color: black;   
     cursor: pointer; 
+    text-decoration: none;
 }
 a:hover{
     font-weight:bold;
@@ -63,7 +68,6 @@ li:hover{
     font-weight: bold;
 }
 .contact>.contactfooter{
-    color: white;
     cursor: pointer;
 }
 /*all images*/
@@ -78,7 +82,7 @@ main>.imgcontainer{
     margin-right: auto;
     width: 75%;
     text-align: center;
-    border-radius: 5px;
+
 } 
 .imgcontainer>.picturedescription{
     text-align: center;
@@ -91,18 +95,16 @@ main>.imgcontainer{
 }
 .articles{
     border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 5px 5px rgb(231, 91, 91);
+    box-shadow: 5px 5px #5085a5;
     height: 250px;
     width: 250px;
     min-width: 250px;
     margin-bottom: 10px;
 }
 .button{
-    border: none;
-    border-radius: 5px;
+    border: 1px solid black;
     height: 30px;
-    background: black;
+    background: white;
     cursor: pointer;
     margin-bottom: 5px;
 }
@@ -115,7 +117,7 @@ main>.imgcontainer{
    text-decoration: none; 
 }
 .articles:hover{
-    box-shadow: 7px 7px rgb(231, 91, 91);
+    box-shadow: 7px 7px #5085a5;
 }
 .articles > p{
     line-height: 21px;
@@ -124,28 +126,54 @@ main>.imgcontainer{
 .articles >.thumbnail{
     width:100px;
     height:100px;
-    border: 1px solid black;
-    border-radius: 5px;;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
-/* .thumbButton{
+
+.thumbButton>.thumbnail{
+    width:100px;
+    height:100px;
     cursor: pointer;
-    border: 1px solid black;
-    border-radius: 5px;;
+    display: block;
+}
+.articles>.thumbButton{
     display: block;
     margin-left: auto;
     margin-right: auto;
-} */
+    padding: 0px;
+    border: none;
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0);
+    z-index: 2;
+    cursor: pointer;
+    overflow-y:scroll;
+}
+#text{
+    color: white;
+}
 
+.overlay>.largethumb{
+    display: block;
+    width: 75%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
 /* Footer settings */
 .contact{
     bottom: 0;
     display: block;
     width: 100%;
     height: 30px;
-    background-color: black;
+    background-color:  white;
     text-align: center;
 }
 
@@ -169,17 +197,17 @@ fieldset{
 }
 input,textarea{
     padding: 5px;
-    border-radius: 5px;
     box-shadow: none;
-    border-style: solid;
+    border-style: solid ;
 }
 textarea{
     border: 2px solid black;
 }
 .contact-field>button{
     text-align: center;
-    background-color: rgb(132, 219, 170);
-    border-radius: 5px;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px #5085a5;
     font-size: 120%;
     cursor: pointer;
 }
@@ -188,52 +216,20 @@ textarea{
 }
 .contact-page>.links{
     display:flex;
-    background-color: black;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 10px;
 }
-.links>.linkedin{
+.links>button{
     text-align: center;
-    background-color:black;
-    border-radius: 5px;
+    background-color: white;
     border: none;
     cursor: pointer;
-    margin-left: 14px;
-    min-height: 30px;
-}
-.links>.github{
-    text-align: center;
-    background-color: black;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 14px;
-    min-height: 30px;
-}
-.links>.email{
-    text-align: center;
-    background-color: black;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    margin-left: 14px;
-    min-height: 30px;
-}
-.linkedin>a{
-    color:white;
-    text-decoration: none;
-}
-.github>a{
-    color: white;
-    text-decoration: none;
+    height: 30px;
+    width: 70px; 
 }
 
-.email>a{
-    color: white;
-    text-decoration: none; 
-}
 
 @media screen and (min-width: 470px){
     /* change article container size */
@@ -257,7 +253,6 @@ textarea{
     }
     .art-cont{  
         padding: 10px 10px 10px 10px; 
-        border-radius: 7px;
     }
     /* need to adjust all images*/
    .img{
