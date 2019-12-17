@@ -126,6 +126,7 @@ main>.imgcontainer{
 .articles >.thumbnail{
     width:100px;
     height:100px;
+    
 }
 
 .thumbButton>.thumbnail{
@@ -140,6 +141,10 @@ main>.imgcontainer{
     margin-right: auto;
     padding: 0px;
     border: none;
+    box-shadow: 3px 3px #5085a5;
+}
+.thumbButton:hover{
+    box-shadow: 5px 5px #5085a5;
 }
 #overlay {
     position: fixed;
@@ -150,15 +155,18 @@ main>.imgcontainer{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0);
+    background-color: rgba(0,0,0,0.5);
     z-index: 2;
     cursor: pointer;
     overflow-y:scroll;
 }
 #text{
-    color: white;
+    color: black;
 }
-
+.overlay{
+    background-color: white;
+    padding-top: 10px;
+}
 .overlay>.largethumb{
     display: block;
     width: 75%;
