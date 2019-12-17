@@ -5,7 +5,7 @@
 body{
     margin:0;
 }
-body>.main{
+body>.mainload{
     padding: 50px 0px 0;
     display:block;
     min-height: 95vh;
@@ -34,18 +34,18 @@ section{
 }
 .nav-item{
     list-style-type: none;
-}
-.nav-item > a{
-    text-decoration: none;
     font-size: 120%;
+    color: white;
+    cursor: pointer;
 }
+
 
 /* Text for h1,h2,h3,p,a,legend, and inputs */
 h1,h2,h3{
     margin: 0px;
     font-family: 'Karla', sans-serif;
 }
-p,a,legend,input,textarea,button{
+p,a,legend,input,textarea,button,li{
     font-family: 'Rubik', sans-serif; 
     font-size: 16px;
 }
@@ -58,6 +58,13 @@ a{
 }
 a:hover{
     font-weight:bold;
+}
+li:hover{
+    font-weight: bold;
+}
+.contact>.contactfooter{
+    color: white;
+    cursor: pointer;
 }
 /*all images*/
 main>.imgcontainer{
@@ -131,6 +138,7 @@ main>.imgcontainer{
     margin-left: auto;
     margin-right: auto;
 } */
+
 /* Footer settings */
 .contact{
     bottom: 0;

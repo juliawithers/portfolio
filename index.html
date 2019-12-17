@@ -10,13 +10,14 @@
 <body class="herobody">
     <header class = "nav-bar">
         <ul class = "nav">
-            <li class = "nav-item"><a href = "contact.html">Contact</a></li>
-            <li class = "nav-item"><a href = "projects.html">Projects</a></li>
-            <li class = "nav-item"><a href = "about.html">About Me</a></li>
-            <li class = "nav-item"><a href = "index.html">Home</a></li>
+            <li class = "nav-item" id="contact">Contact</li>
+            <li class = "nav-item" id="projects">Projects</li>
+            <li class = "nav-item" id="about">About Me</li>
+            <li class = "nav-item" id="index">Home</li>
         </ul>
     </header>
-    <main class = "main" class="heromain">     
+    <main class="mainload">
+        <div class = "main" class="heromain">    
         <section class = "hero">
             <h1>Julia Fehr</h1>
             <p>Mechanical Engineer, Full Stack Web Developer, and SciFi Enthusiast. I am interested in creating seamless interactions between technology and end users.</p>
@@ -26,9 +27,15 @@
             <img src="water.JPG" alt="smooth stones in water" class="img">
             <p class="picturedescription">A picture of smooth stones on the Medditerranean Coast</p>
         </div>
+        </div> 
     </main>
     <footer class = "contact">
-            <h3><u><a href="contact.html"> Contact Julia Fehr</a></u></h3>
+            <h3 class="contactfooter"><u>Contact Julia Fehr</u></h3>
     </footer>
+    <script
+     src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="code.js"></script>
 </body>
 </html>
