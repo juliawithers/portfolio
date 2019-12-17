@@ -66,7 +66,7 @@ function loadPage(){
                     <legend for="subject">Subject</legend>
                     <input type="text"  name="subject" id="subject" class="subject" placeholder="Subject of message here."><br>
                     <legend for="message">Message</legend>
-                    <textarea type="text"  name="message" id="message" class="message" placeholder="Content of message here." ></textarea><br>
+                    <textarea type="text"  name="message" id="message" class="message" placeholder="Content of message here. Please note that the form submittal is in progress. Please use the email link above to contact me in the meantime. Thanks!" ></textarea><br>
                     <!-- submit an email -->
                     <button class="submit">Submit Message</button>
                 </fieldset>
@@ -183,7 +183,7 @@ function loadPage(){
                     <legend for="subject">Subject</legend>
                     <input type="text"  name="subject" id="subject" class="subject" placeholder="Subject of message here."><br>
                     <legend for="message">Message</legend>
-                    <textarea type="text"  name="message" id="message" class="message" placeholder="Content of message here." ></textarea><br>
+                    <textarea type="text"  name="message" id="message" class="message" placeholder="Content of message here. Please note that the form submittal is in progress. Please use the email link above to contact me in the meantime. Thanks!" ></textarea><br>
                     <!-- submit an email -->
                     <button class="submit">Submit Message</button>
                 </fieldset>
