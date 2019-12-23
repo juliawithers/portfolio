@@ -15,11 +15,10 @@ const STORE = [
     },
 ]
 // Load each page:
-function loadPage(input){
+function loadPage(page){
     // if contact/about/project/home load those pages
     // load contact page
-    if(input==='contact'){
-        $('#contact').on("click",function(){
+    if(page==='contact'){
             $('.mainload').html(
         `
         <div id="menuoverlay">
@@ -37,8 +36,8 @@ function loadPage(input){
                 <div class="imgcontainer">
                 <img src="stain.JPG" alt="Beautiful stain glass of St. Chapelle, Paris" class="img">
                 <p class="picturedescription">The stain glass windows inside St. Chapelle, Paris</p>
-            </div>`)}
-        //      The form is a work in progress. I would like to implement it shortly.  
+            </div>`)
+        //      The form is a work in progress. I would like to implement it shortly. Is it better for me to keep this as a separate branch or is this ok?   
         //         <h3>Email Me:</h3>
         //         <p>Please feel free to contact me with any questions or concerns!</p>
         //         <form id="contactform" method="post">
@@ -55,7 +54,7 @@ function loadPage(input){
         //         </form>    
         //     </section>
         // </div>
-    );};
+    };
     
     // load projects page
     // {
@@ -67,8 +66,7 @@ function loadPage(input){
     // }
     // make whole square a thumnail picture
     // when click on the thumbnail, an overlay pops up and shows the content of the object - will need to give each article an ID
-    if(input==='projects'){
-        $('#projects').on("click",function(){
+    if(page==='projects'){
             $('.mainload').html(
         `<div id="overlay">
                 <div id="text"></div>
@@ -95,12 +93,11 @@ function loadPage(input){
                         </article>
                     </div>
             </section>
-        </div>`
-    )});};
+        </div>`)
+    };
 
     // load about me page
-    if(input==='about'){
-        $('#about').on("click",function(){
+    if(page==='about'){
             $('.mainload').html(
         `
         <div id="menuoverlay">
@@ -112,17 +109,17 @@ function loadPage(input){
                 <h1>About Me</h1>
                 <p>I was born and raised in Atlanta. I have recently graduated from the Front End Web Development Career Path boot camp at Thinkful. I have a strong technical background having graduated from Georgia Tech with a degree in Mechanical Engineering. I have seen firsthand the importance of user friendly interfaces. Currently I am focusing on UX/UI.</p><br>
                 <p>I enjoy reading in my spare time and sketching on occasion. I have a deep love for Sci-Fi and the endless technological possibilities my favorite writers conjure up. I also enjoy a good RPG or video game when time permits. That being said, I’m partial to spending time outdoors and find it necessary to clear my head at times.</p>
+                <div class="imgcontainer">
+                    <img src="skyline.JPG" alt="The Atlanta Skyline" class="img">
+                    <p class="picturedescription">The Atlanta Skyline from the top of the Clermont Lounge</p>
+                </div>
             </section>
-            <div class="imgcontainer">
-                <img src="skyline.JPG" alt="The Atlanta Skyline" class="img">
-                <p class="picturedescription">The Atlanta Skyline from the top of the Clermont Lounge</p>
-            </div>
+            
         </div> `)
-    });};
+    };
 
     // load home page
-    if(input==='index'){
-        $('#index').on("click",function(){
+    if(page==='index'){
             $('.mainload').html(
             `
             <div id="menuoverlay">
@@ -134,17 +131,17 @@ function loadPage(input){
                     <h1>Julia Fehr</h1>
                     <p>Mechanical Engineer, Full Stack Web Developer, and Sci-Fi Enthusiast. I am interested in creating seamless interactions between technology and end users.</p>
                     <p>I have added some of my favorite pictures to the site. Enjoy!</p>
+                    <div class="imgcontainer">
+                        <img src="water.JPG" alt="smooth stones in water" class="img">
+                        <p class="picturedescription">Smooth stones on the Mediterranean Coast</p>
+                    </div>
                 </section>
-                <div class="imgcontainer">
-                    <img src="water.JPG" alt="smooth stones in water" class="img">
-                    <p class="picturedescription">Smooth stones on the Mediterranean Coast</p>
-                </div>
+                
             </div> `)
-    });};
+    };
 
     // load contact page when link at bottom is clicked
-    if(input==='contact'){
-        $('.contact').on("click",function(){
+    if(page==='contact'){
             $('.mainload').html(
         `
         <div id="menuoverlay">
@@ -158,11 +155,13 @@ function loadPage(input){
                     <button class="linkedin"><a href="https://linkedin.com/in/julia-fehr-b5447b41" target="_blank">LinkedIn</a></button>
                     <button class="email"><a href="mailto:09jwithers@gmail.com">Email</a></button>
                     <button class="github"><a href="https://github.com/juliawithers" target="_blank">Github</a></button>
+                    <div class="imgcontainer">
+                        <img src="stain.JPG" alt="Beautiful stain glass of St. Chapelle, Paris" class="img">
+                       <p class="picturedescription">The stain glass windows inside St. Chapelle, Paris</p>
+                    </div>
                 </div> 
-                <div class="imgcontainer">
-                <img src="stain.JPG" alt="Beautiful stain glass of St. Chapelle, Paris" class="img">
-                <p class="picturedescription">The stain glass windows inside St. Chapelle, Paris</p>
-            </div>`)}
+            </section> 
+        </div>`)
         //      The form is a work in progress. I would like to implement it later on.  
         //         <h3>Email Me:</h3>
         //         <p>Please feel free to contact me with any questions or concerns!</p>
@@ -180,7 +179,7 @@ function loadPage(input){
         //         </form>    
         //     </section>
         // </div>
-    );};
+    };
 }; //end of function loadPage.
 
 function on(){
@@ -188,7 +187,7 @@ function on(){
     $('#text').html(
         `<section class="overlay">
             <img id="x" src="x_out.png" onclick="off()">
-            <p><strong> Game of Thrones Quiz</strong></p>
+            <p class="projectTitle"><strong> Game of Thrones Quiz</strong></p>
             <p>A simple quiz on the subject of Game of Thrones, utilizing HTML, CSS, and JavaScript.</p>
                 <div class="buttonhome">
                     <button class="button repo" ><a class="alink" href="https://github.com/juliawithers/quiz-app" target="_blank">View Repo</a></button>
@@ -206,10 +205,12 @@ function onMenu(){
         `<section class="menuoverlay">
             <img id="x" src="x_out.png" onclick="offMenu()">
             <ul class = "ham-nav">
-                <li class="ham-nav-item" id="contact"><a onclick="offMenu();loadPage('contact')">Contact</a></li>
-                <li class="ham-nav-item" id="projects"><a onclick="offMenu();loadPage('projects')">Projects</a></li>
-                <li class="ham-nav-item" id="about"><a onclick="offMenu();loadPage('about')">About</a></li>
-                <li class="ham-nav-item" id="index"><a onclick="offMenu();loadPage('index')">Home</a></li>
+                <li class="ham-nav-item"><a id="index" onclick="offMenu();loadPage('index')">Home</a></li>
+                <li class="ham-nav-item"><a id="projects" onclick="offMenu();loadPage('projects')">Projects</a></li>
+                <li class="ham-nav-item"><a id="about" onclick="offMenu();loadPage('about')">About</a></li>
+                <li class="ham-nav-item"><a id="contact" onclick="loadPage('contact')">Contact</a></li>
+                
+                
             </ul>
         </section>`)
     $('body').css('overflow','hidden');  
