@@ -18,7 +18,7 @@ const STORE = [
 function loadPage(input){
     // if contact/about/project/home load those pages
     // load contact page
-    if(input = 'contact'){
+    if(input==='contact'){
         $('#contact').on("click",function(){
             $('.mainload').html(
         `
@@ -67,7 +67,7 @@ function loadPage(input){
     // }
     // make whole square a thumnail picture
     // when click on the thumbnail, an overlay pops up and shows the content of the object - will need to give each article an ID
-    if(input='projects'){
+    if(input==='projects'){
         $('#projects').on("click",function(){
             $('.mainload').html(
         `<div id="overlay">
@@ -99,7 +99,7 @@ function loadPage(input){
     )});};
 
     // load about me page
-    if(input='about'){
+    if(input==='about'){
         $('#about').on("click",function(){
             $('.mainload').html(
         `
@@ -121,7 +121,7 @@ function loadPage(input){
     });};
 
     // load home page
-    if(input="index"){
+    if(input==='index'){
         $('#index').on("click",function(){
             $('.mainload').html(
             `
@@ -143,7 +143,7 @@ function loadPage(input){
     });};
 
     // load contact page when link at bottom is clicked
-    if(input='contact'){
+    if(input==='contact'){
         $('.contact').on("click",function(){
             $('.mainload').html(
         `
