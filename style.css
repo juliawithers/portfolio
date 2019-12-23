@@ -18,6 +18,7 @@ section{
     padding: 100px 50px 50px 50px;
 }
 /* Navigation */
+
 .nav-bar{
     width: 100%;
     background-color: white;
@@ -27,20 +28,72 @@ section{
     left: 0;
     border-bottom: 2px solid #5085a5;
 }
+#hamburger{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 50px;
+    cursor: pointer;
+}
 .nav{
     padding: 0;
     margin: 0; 
     display: flex;
+    justify-content: space-evenly;   
+}
+.ham-nav{
+    padding: 0;
+    margin: 0; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 .nav-item{
+    display: none;
+}
+.ham-nav-item{
     list-style-type: none;
-    font-size: 120%;
+    text-align: center;  
+}
+.ham-nav-item>a{
+    font-size: 140%;
     color: black;
     cursor: pointer;
 }
-
-
+.ham-nav-item>a:hover{
+    font-weight: bold;
+}
+#menuoverlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+    overflow-y:scroll;
+}
+#menutext{
+    color: black;
+    margin: 10px 10px 10px 10px;
+    height: 100%;
+}
+.menuoverlay{
+    background-color: white;
+    padding: 0px;
+    height: 100%;
+}
+#x{
+    position: fixed;
+    top:10px;
+    right:10px;
+    width: 10%;
+}
 /* Text for h1,h2,h3,p,a,legend, and inputs */
 h1,h2,h3{
     margin: 0px;
@@ -128,7 +181,9 @@ main>.imgcontainer{
     height:100px;
     
 }
-
+.articles>.projectTitle{
+    font-size: 115%;
+}
 .thumbButton>.thumbnail{
     width:100px;
     height:100px;
@@ -165,6 +220,7 @@ main>.imgcontainer{
 }
 .overlay{
     background-color: white;
+    margin: 10px;
     padding-top: 10px;
 }
 .overlay>.largethumb{
@@ -249,6 +305,24 @@ textarea{
         justify-content: space-evenly;
         padding-top: 15px; 
     } 
+    #hamburger{
+        display: none;
+    }
+    .nav{
+        padding: 0;
+        margin: 0; 
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .nav-item{
+        display: block;
+        list-style-type: none;
+    }
+    .nav-item>a{
+        font-size: 120%;
+        color: black;
+        cursor: pointer;
+    }
 }
 @media screen and (min-width: 750px){
     /* Universal Section settings */
