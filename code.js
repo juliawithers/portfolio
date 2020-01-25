@@ -25,8 +25,8 @@ const STORE = [
         title: "inSUREance",
         description: "Find providers near you that take your insurance.",
         languages: "HTML, CSS, JavaScript, jQuery",
-        repoLink: "https://github.com/juliawithers/insurance-app",
-        liveLink: "https://juliawithers.github.io/insurance-app/",
+        repoLink: "https://github.com/juliawithers/inSUREance",
+        liveLink: "https://juliawithers.github.io/inSUREance/",
         thumb: 
         {   smallThumb: "LandingPage.PNG",
             altSmallThumb: "inSUREance App Thumbnail"},
