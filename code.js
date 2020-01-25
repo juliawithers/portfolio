@@ -2,18 +2,52 @@ const STORE = [
     {
         title: "Game of Thrones Quiz",
         description: "A simple quiz on the subject of Game of Thrones",
-        languages: "HTML, CSS, JavaScript",
+        languages: "HTML, CSS, JavaScript, jQuery",
         repoLink: "https://github.com/juliawithers/quiz-app",
-        liveLink: "https://juliawithers.github.io/quiz-app/"
+        liveLink: "https://juliawithers.github.io/quiz-app/",
+        thumb: 
+            {   smallThumb: "GOT_Thumb_Original.PNG",
+                altSmallThumb:"Game of Thrones Quiz App Thumbnail"},
+        overlayThumbs: [
+            {
+                bigThumb: "GOT_Thumb_Question.PNG",
+                altBigThumb: "Game of Thrones Question 1"},
+            {
+                bigThumb: "GOT_Thumb_Question_correct.PNG",
+                altBigThumb: "Correct Answer Screenshot"},
+            {
+                bigThumb: "GOT_Thumb_Question_incorrect.PNG",
+                altBigThumb: "In Answer Screenshot"}
+        ],
+        overlayID: "GOT",
     },
     {
-        title: "Project 2",
-        description: "A work in progress",
-        languages: "TBD",
-        repoLink: "TBD",
-        liveLink: "TBD"
+        title: "inSUREance",
+        description: "Find providers near you that take your insurance.",
+        languages: "HTML, CSS, JavaScript, jQuery",
+        repoLink: "https://github.com/juliawithers/insurance-app",
+        liveLink: "https://juliawithers.github.io/insurance-app/",
+        thumb: 
+        {   smallThumb: "LandingPage.PNG",
+            altSmallThumb: "inSUREance App Thumbnail"},
+        overlayThumbs: [
+            {
+                bigThumb: "LandingPage.PNG",
+                altBigThumb: "Landing page for inSUREance"},
+            {
+                bigThumb: "ResultsLoaded.PNG",
+                altBigThumb: "Results loaded"},
+            {
+                bigThumb: "ShowMore.PNG",
+                altBigThumb: "Short configuration for results"},
+            {
+                bigThumb: "ShowLess.PNG",
+                altBigThumb: "Long configuration for results"}
+        ],
+        overlayID: "ins"
     },
 ]
+
 // Load each page:
 function loadPage(page){
     // if contact/about/project/home load those pages
@@ -57,15 +91,6 @@ function loadPage(page){
     };
     
     // load projects page
-    // {
-    //     title: "Game of Thrones Quiz",
-    //     description: "A simple quiz on the subject of Game of Thrones",
-    //     languages: "HTML, CSS, JavaScript",
-    //     repoLink: "https://github.com/juliawithers/quiz-app",
-    //     liveLink: "https://juliawithers.github.io/quiz-app/"
-    // }
-    // make whole square a thumnail picture
-    // when click on the thumbnail, an overlay pops up and shows the content of the object - will need to give each article an ID
     if(page==='projects'){
             $('.mainload').html(
         `<div id="overlay">
@@ -80,21 +105,30 @@ function loadPage(page){
                 <h1>Projects</h1>
                 <p>Click on the thumbnails to see more screenshots</p>
                 <div class = "art-cont">
-                    <article class = "articles">
-                        <p class="projectTitle"><strong> Game of Thrones Quiz</strong></p>
-                        <p>A simple quiz on the subject of Game of Thrones, utilizing HTML, CSS, and JavaScript.</p>
-                            <div class="buttonhome">
-                                <button class="button repo" ><a class="alink" href="https://github.com/juliawithers/quiz-app" target="_blank">View Repo</a></button>
-                                <button class="button live"><a class="alink" href="https://juliawithers.github.io/quiz-app/ " target="_blank">View Live</a></button>
-                            </div>
-                        <button class="thumbButton" onclick="on()">
-                        <img src="GOT_Thumb_Original.PNG" alt="Game of Thrones Quiz App Thumbnail" class = "thumbnail">
-                        </button>    
-                        </article>
-                    </div>
+
+                </div>
             </section>
         </div>`)
+        renderProjects(STORE)
     };
+
+    // Use the STORE object to create the articles
+    function renderProjects(STORE){
+        for(let i=0;i<STORE.length;i++){
+            $('.art-cont').append(
+            `<article class = "articles">
+                <p class="projectTitle"><strong> ${STORE[i].title} </strong></p>
+                <p>${STORE[i].description}</p>
+                    <div class="buttonhome">
+                        <button class="button repo" ><a class="alink" href="${STORE[i].repoLink}" target="_blank">View Repo</a></button>
+                        <button class="button live"><a class="alink" href="${STORE[i].liveLink}" target="_blank">View Live</a></button>
+                    </div>
+                <button class="thumbButton" onclick="on()">
+                <img src="${STORE[i].thumb.smallThumb}" alt="${STORE[i].thumb.altSmallThumb}" class = "thumbnail" id="${STORE[i].overlayID}">
+                </button>    
+            </article>`)
+        }
+    }
 
     // load about me page
     if(page==='about'){
@@ -107,7 +141,7 @@ function loadPage(page){
         <div class = "main" class="aboutmain">         
             <section class = "about-me">
                 <h1>About Me</h1>
-                <p>I was born and raised in Atlanta. I have recently graduated from the Front End Web Development Career Path boot camp at Thinkful. I have a strong technical background having graduated from Georgia Tech with a degree in Mechanical Engineering. I have seen firsthand the importance of user friendly interfaces. Currently I am focusing on UX/UI.</p><br>
+                <p>I was born and raised in Atlanta. I currently enrolled in the Front End Web Development Career Path boot camp at Thinkful. I have a strong technical background having graduated from Georgia Tech with a degree in Mechanical Engineering. I have seen firsthand the importance of user friendly interfaces. Currently I am focusing on UX/UI.</p><br>
                 <p>I enjoy reading in my spare time and sketching on occasion. I have a deep love for Sci-Fi and the endless technological possibilities my favorite writers conjure up. I also enjoy a good RPG or video game when time permits. That being said, I’m partial to spending time outdoors and find it necessary to clear my head at times.</p>
                 <div class="imgcontainer">
                     <img src="skyline.JPG" alt="The Atlanta Skyline" class="img">
@@ -182,22 +216,45 @@ function loadPage(page){
     };
 }; //end of function loadPage.
 
+// render the overlay when the thumbnail on the project page is clicked
 function on(){
-    document.getElementById("overlay").style.display = "block";
-    $('#text').html(
-        `<section class="overlay">
-            <img id="x" src="x_out.png" onclick="off()">
-            <p class="projectTitle"><strong> Game of Thrones Quiz</strong></p>
-            <p>A simple quiz on the subject of Game of Thrones, utilizing HTML, CSS, and JavaScript.</p>
-                <div class="buttonhome">
-                    <button class="button repo" ><a class="alink" href="https://github.com/juliawithers/quiz-app" target="_blank">View Repo</a></button>
-                    <button class="button live"><a class="alink" href="https://juliawithers.github.io/quiz-app/ " target="_blank">View Live</a></button>
-                </div>
-            <img src="GOT_Thumb_Question.PNG" alt="Game of Thrones Question 1" class="largethumb">
-            <img src="GOT_Thumb_Question_correct.PNG" alt="Correct Answer Screenshot" class="largethumb">
-            <img src="GOT_Thumb_Question_incorrect.PNG" alt="In Answer Screenshot" class="largethumb">  
-        </section>`)
-    $('body').css('overflow','hidden'); 
+    $('.thumbButton').on('click', function(e){  
+        document.getElementById("overlay").style.display = "block";
+        const id = $(e.target).attr('id')
+        for(let i=0;i<STORE.length;i++){
+            if(id === STORE[i].overlayID){
+                $('#text').html(
+                    `<section class="overlay" onclick="off()">
+                        <img id="x" src="x_out.png" onclick="off()">
+                        <p class="projectTitle"><strong> ${STORE[i].title} </strong></p>
+                        <p>${STORE[i].description}</p>
+                        <p>${STORE[i].languages}</p>
+                            <div class="buttonhome">
+                                <button class="button repo" ><a class="alink" href="${STORE[i].repoLink}" target="_blank">View Repo</a></button>
+                                <button class="button live"><a class="alink" href="${STORE[i].liveLink} " target="_blank">View Live</a></button>
+                            </div> 
+                            <div class="image-container">
+                            
+                            </div>
+                    </section>`)
+                $('body').css('overflow','hidden');
+                renderOverlayImages(STORE[i])
+                }
+            } 
+        })
+};
+// render the images onto the overlay
+function renderOverlayImages(store){
+    for(let i=0;i<store.overlayThumbs.length;i++){
+        $('.image-container').append(
+            `<img src="${store.overlayThumbs[i].bigThumb}" alt="${store.overlayThumbs[i].altBigThumb}" class="largethumb">`
+        )
+    }
+}
+// exit the overlay when X is clicked
+function off(){
+    document.getElementById("overlay").style.display ="none";
+    $('body').css('overflow','visible');   
 };
 function onMenu(){
     document.getElementById("menuoverlay").style.display = "block";
@@ -208,19 +265,15 @@ function onMenu(){
                 <li class="ham-nav-item"><a id="index" onclick="offMenu();loadPage('index')">Home</a></li>
                 <li class="ham-nav-item"><a id="projects" onclick="offMenu();loadPage('projects')">Projects</a></li>
                 <li class="ham-nav-item"><a id="about" onclick="offMenu();loadPage('about')">About</a></li>
-                <li class="ham-nav-item"><a id="contact" onclick="loadPage('contact')">Contact</a></li>
-                
-                
+                <li class="ham-nav-item"><a id="contact" onclick="loadPage('contact')">Contact</a></li> 
             </ul>
         </section>`)
     $('body').css('overflow','hidden');  
 }
-function off(){
-    document.getElementById("overlay").style.display ="none";
-    $('body').css('overflow','visible');   
-};
+// exit the overlay when X is clicked
 function offMenu(){
     document.getElementById("menuoverlay").style.display="none";
     $('body').css('overflow','visible');
 }
-$(loadPage);
+$(loadPage)
+// $(on(STORE))

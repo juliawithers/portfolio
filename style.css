@@ -248,7 +248,7 @@ main>.imgcontainer{
     margin-right: auto;
     padding-top: 10px;
 }
-.overlay>.largethumb{
+.image-container>.largethumb{
     display: block;
     width: 75%;
     max-width: 750px;
